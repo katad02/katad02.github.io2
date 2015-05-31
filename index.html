@@ -1,1 +1,320 @@
-<p>HI</p>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>Tanki Online</title>
+
+
+
+
+<style>
+
+#prlx_lyr_1{
+	position:fixed;
+	background: url(http://tankionline.com/en/wp-content/themes/newest/images/bg/body.jpg) no-repeat center 15px;
+	width:1024px;
+	height:2020px;
+}
+body {
+ color: #eee;
+ margin:-15px 0px;}
+
+a {
+    text-decoration: none;
+    color: hsl(206, 80%, 50%);
+}
+
+.roll {
+    display: inline-block;
+    overflow: hidden;
+
+    vertical-align: top;
+
+    -webkit-perspective: 400px;
+       -moz-perspective: 400px;
+
+    -webkit-perspective-origin: 50% 50%;
+       -moz-perspective-origin: 50% 50%;
+}
+.roll span {
+    display: block;
+    position: relative;
+    padding: 0 2px;
+
+    -webkit-transition: all 400ms ease;
+       -moz-transition: all 400ms ease;
+    
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+    
+    -webkit-transform-style: preserve-3d;
+       -moz-transform-style: preserve-3d;
+}
+    .roll:hover span {
+        background: #111;
+
+        -webkit-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+           -moz-transform: translate3d( 0px, 0px, -30px ) rotateX( 90deg );
+    }
+.roll span:after {
+    content: attr(data-title);
+
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 2px;
+
+    color: #fff;
+    background: hsl(206, 80%, 30%);
+
+    -webkit-transform-origin: 50% 0%;
+       -moz-transform-origin: 50% 0%;
+
+    -webkit-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+       -moz-transform: translate3d( 0px, 105%, 0px ) rotateX( -90deg );
+}
+.flip3D{ 
+
+	width:240px; height:200px; margin:70px; float:left;text-align:center;}
+.flip3D > .ffront{
+	font-family: "Comic Sans MS";
+	font-size: 30px;
+	 /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateY( 0deg );
+	-moz-transform: perspective( 600px ) rotateY( 0deg );
+	transform: perspective( 600px ) rotateY( 0deg );
+	background:#FC0;  width:350px; height:250px; border-radius: 7px;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: -webkit-transform .5s linear 0s;
+	transition: -moz-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D > .fback{
+	 /* Firefox */
+    display:-moz-box;
+    -moz-box-pack:center;
+    -moz-box-align:center;
+
+    /* Safari and Chrome */
+    display:-webkit-box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+
+    /* W3C */
+    display:box;
+    box-pack:center;
+    box-align:center;
+	position:absolute;
+	-webkit-transform: perspective( 600px ) rotateY( 180deg );
+	transform: perspective( 600px ) rotateY( 180deg );
+	background: #80BFFF; width:350px; height:250px; border-radius: 7px;
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	transition: -webkit-transform .5s linear 0s;
+	transition: transform .5s linear 0s;
+}
+.flip3D:hover > .ffront{
+	cursor: pointer;
+	-webkit-transform: perspective( 600px ) rotateY( -180deg );
+	transform: -moz-perspective( 600px ) rotateY( -180deg );
+	transform: perspective( 600px ) rotateY( -180deg );
+}
+.flip3D:hover > .fback{
+	cursor: pointer;
+	-webkit-transform: perspective( 600px ) rotateY( 0deg );
+	transform: -moz-perspective( 600px ) rotateY( 0deg );
+	transform: perspective( 600px ) rotateY( 0deg );
+
+}
+
+
+
+.block-menu {
+
+ display: block;
+top:-20px;
+ background:#000;
+}
+
+.block-menu li {
+ display: inline-block;
+ padding: 4px;
+
+}
+
+.block-menu li a {
+ color: #fff;
+ display: block;
+ text-decoration: none;
+ font-family: 'Passion One', Arial, sans-serif;
+ font-smoothing: antialiased;
+ text-transform: uppercase;
+ overflow: visible;
+ line-height: 20px;
+ font-size: 24px;
+ padding: 15px 10px;
+
+}
+
+/* animation domination */
+.three-d {
+ perspective: 200px;
+ transition: all .07s linear;
+ position: relative;
+ cursor: pointer;
+}
+ /* complete the animation! */
+ .three-d:hover .three-d-box, 
+ .three-d:focus .three-d-box {
+ transform: translateZ(-25px) rotateX(-90deg);
+ }
+
+ 
+.three-d-box {
+ transition: all .3s ease-out;
+ transform: translatez(-25px);
+ transform-style: preserve-3d;
+ pointer-events: none;
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: block;
+ width: 100%;
+ height: 100%;
+}
+ 
+.in-box {
+	 z-index: -2;
+	box-shadow: inset 3px 4px 5px  rgba(1, 1, 1, 1);
+	border: 2px black solid;
+	width:330px; height:230px;
+}
+
+ .three-d-box : hover {
+ background: #000;
+ }
+/* 
+ put the "front" and "back" elements into place with CSS transforms, 
+ specifically translation and translatez
+*/
+.front {
+ transform: rotatex(0deg) translatez(25px);
+ color: #ccc;
+ background:#550014;
+}
+
+.back {
+ transform: rotatex(90deg) translatez(25px);
+ color: #fff;
+ background: #aa0028;
+ 
+ }
+ 
+
+.front, .back {
+ display: block;
+ width: 100%;
+ height: 100%;
+ position: absolute;
+ top: 0;
+ left: 0;
+ 
+ padding: 15px 10px;
+ pointer-events: none;
+ box-sizing: border-box;
+}
+.font1 {font-family: "Comic Sans MS"; color: #3b00ff;}
+#content_lyr { position: absolute;}
+
+img.play {
+	position: absolute;
+    top: 143px;
+	right: -300px;
+
+}
+img.logo {
+	position: absolute;
+
+}
+</style>
+<script>
+function parallax(){
+	var prlx_lyr_1 = document.getElementById('prlx_lyr_1');
+	prlx_lyr_1.style.top = -(window.pageYOffset / 2)+'px';
+	if(window.pageYOffset>4040){
+		window.pageYOffset =4040;}
+}
+window.addEventListener("scroll", parallax, false);
+</script>
+
+</head>
+<body>
+<div id="prlx_lyr_1"></div>
+<div id="content_lyr">
+<ul class="block-menu">
+	<li><a href="page.html" class="three-d">
+		Home
+		<span aria-hidden="true" class="three-d-box">
+			<span class="front">Home</span>
+			<span class="back">Home</span>
+		</span>
+	</a></li>
+	<li><a href="Images.html" class="three-d">
+		Images
+		<span aria-hidden="true" class="three-d-box">
+			<span class="front">Images</span>
+			<span class="back">Images</span>
+		</span>
+	</a></li>
+	<li><a href="Accounts.html" class="three-d">
+		Accounts
+		<span aria-hidden="true" class="three-d-box">
+			<span class="front">Accounts</span>
+			<span class="back">Accounts</span>
+		</span>
+	</a></li>
+	<li><a href="Contact.html" class="three-d">
+		Contact
+		<span aria-hidden="true" class="three-d-box">
+			<span class="front">Contact</span>
+			<span class="back">Contact</span>
+		</span>
+	</a></li>
+	<li><a href="Info.html" class="three-d">
+		About
+		<span aria-hidden="true" class="three-d-box">
+			<span class="front">About</span>
+			<span class="back">About</span>
+		</span>
+	</a></li>
+	<!-- more items here -->
+</ul>
+
+<a href="http://tankionline.com/battle-en.html#/server=en4">
+<img border="0" class="play" src="http://programingro.ucoz.ro/play.png" width="331" height="81"></a>
+
+<script> for(var i=1; i < 54; i++){ document.write('<h1 class="font1">Line '+i+'</h1>'); } </script>
+</div>
+</body>  
+</html>
